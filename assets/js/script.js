@@ -47,3 +47,10 @@ $(".image").click(function(playerClicked) {
     playSound(icon);
     checkSequence(icon);
 });
+
+/*plays audio to corresponding icon*/
+function playSound(newIcon) {
+    let sound = `assets/audio/${newIcon}.m4a`;
+    let audio = new Audio(sound);
+    audio.play();
+} 
