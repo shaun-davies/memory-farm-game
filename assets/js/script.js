@@ -54,3 +54,27 @@ function playSound(newIcon) {
     let audio = new Audio(sound);
     audio.play();
 } 
+
+/*checks sequences for equality, ends game if false*/
+function checkSequence(icon) {
+    playerSequence.push(icon);
+    if(icon == sequence[click]) {
+        if(playerSequence.length == sequence.length) {
+            setTimeout(function() {
+                playerSequence = [];
+                click = -1;
+                newSequence();
+            }, 1500); 
+        }
+    }else {
+        alert("Game Over, click Start to try again.");
+            playerSequence = [];
+            sequence = [];
+            if (score > highScore) {
+                highScore = score;
+                $("#high-score").text(score);
+            }
+            score = 0;
+            click = -1;
+    }
+}
