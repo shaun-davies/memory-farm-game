@@ -39,3 +39,11 @@ function showSequence(newIcon) {
         document.getElementById(newIcon).classList.remove("zoom");
     }, 350);
 };
+
+/*Adds click listener and plays audio when clicked*/
+$(".image").click(function(playerClicked) {
+    click++;
+    let icon = playerClicked.target.id;
+    playSound(icon);
+    checkSequence(icon);
+});
