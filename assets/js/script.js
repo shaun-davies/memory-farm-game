@@ -18,3 +18,14 @@ startButton.addEventListener('click', (e) => {
     newSequence();
     }
 });
+
+/*This function generates a new icon and inserts it into the sequence, increments the score and plays a sound corresponding to the newIcon */
+function newSequence() {
+    score++;
+    $("#score").text(score);
+
+    let newIcon = icons[Math.floor(Math.random() * icons.length)];
+    sequence.push(newIcon);
+    playSound(newIcon);
+    showSequence(newIcon);
+};
