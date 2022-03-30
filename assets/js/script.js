@@ -29,3 +29,13 @@ function newSequence() {
     playSound(newIcon);
     showSequence(newIcon);
 };
+
+/*This function gets the element id corresponding to the randomly generated icon name 
+and adds CSS styling to it*/
+function showSequence(newIcon) {
+    console.log(newIcon);
+    document.getElementById(newIcon).classList.add("zoom");
+    setTimeout(function () {
+        document.getElementById(newIcon).classList.remove("zoom");
+    }, 350);
+};
