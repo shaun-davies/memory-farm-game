@@ -78,3 +78,21 @@ function checkSequence(icon) {
             click = -1;
     }
 }
+
+/*adds event listener to button to show information*/
+infoButton.addEventListener('click', (e) => {
+    alert("Test your memory skills by listening and watching, each round will add a new sound to the sequence. Repeat the sequence and try to beat your high score! Click Start to play.")
+});
+
+/* Adds event listener to images and stores chosen icon in an array */
+function playerTurn() {
+    for (let image of document.getElementsByClassName("image")) {
+        let listener = image.addEventListener('click', (e) => {
+            let playerClick = e.target.getAttribute("id");
+            playerSequence.push(playerClick);
+            console.log(playerSequence);
+            sequenceTest();
+        });
+    };
+
+};
